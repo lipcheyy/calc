@@ -23,8 +23,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end
-        if s=='-' #Віднімання
+        
+        elsif s=='-' #Віднімання
             puts "Enter the second value"
             b=gets.chomp.to_i
             val-=b
@@ -35,8 +35,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end
-        if s=='/' #Віднімання
+        
+        elsif s=='/' #Віднімання
             puts "Enter the second value"
             b=gets.chomp.to_i
             if b==0
@@ -51,8 +51,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end
-        if s=='*' #Віднімання
+        
+        elsif s=='*' #Віднімання
             puts "Enter the second value"
             b=gets.chomp.to_i
             val*=b;
@@ -63,8 +63,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end
-        if s=='**' #Віднімання
+        
+        elsif s=='**' #Віднімання
             puts "Enter the second value"
             val*=val;
             puts val;
@@ -74,8 +74,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end
-        if s=='%' #Віднімання
+        
+        elsif s=='%' #Віднімання
             puts "Enter the second value"
             b=gets.chomp.to_i
             val%=b;
@@ -86,8 +86,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end
-        if s=='--' #Віднімання
+        
+        elsif s=='--' #Віднімання
             puts "Enter the second value"
             puts val-=1
             puts "Do you want to continue? 'yes or no'"
@@ -96,8 +96,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end
-        if s=='++' #Віднімання
+        
+        elsif s=='++' #Віднімання
             puts "Enter the second value"
             puts val+=1
             puts "Do you want to continue? 'yes or no'"
@@ -106,8 +106,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end
-        if s=='!' #factorial
+        
+        elsif s=='!' #factorial
             val=factorial(val)
             puts val;
             puts "Do you want to continue? 'yes or no'"
@@ -116,8 +116,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end 
-        if s=='sqrt' #factorial
+         
+        elsif s=='sqrt' #factorial
             val=Math.sqrt(val)
             puts val;
             puts "Do you want to continue? 'yes or no'"
@@ -126,8 +126,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end 
-        if s=='sin' #factorial
+         
+        elsif s=='sin' #factorial
             val=Math.sin(val)
             puts val;
             puts "Do you want to continue? 'yes or no'"
@@ -136,8 +136,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end 
-        if s=='cos' #factorial
+         
+        elsif s=='cos' #factorial
             val=Math.cos(val)
             puts val;
             puts "Do you want to continue? 'yes or no'"
@@ -146,8 +146,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end 
-        if s=='tan' #factorial
+         
+        elsif s=='tan' #factorial
             val=Math.tan(val)
             puts val;
             puts "Do you want to continue? 'yes or no'"
@@ -156,8 +156,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end 
-        if s=='exp' #factorial
+         
+        elsif s=='exp' #factorial
             val=Math.exp(val)
             puts val;
             puts "Do you want to continue? 'yes or no'"
@@ -166,9 +166,9 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end 
-        =begin if s=='ctan' #factorial
-            val=Math.ctg(val)
+         
+        elsif s=='ctan' #factorial
+            val=Math.cos(val)/Math.sin(val)
             puts val;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
@@ -176,8 +176,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end  =end
-        if s=='ln' #factorial
+          
+        elsif s=='ln' #factorial
             val=Math.log(val)
             puts val;
             puts "Do you want to continue? 'yes or no'"
@@ -186,8 +186,8 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
-        end
-        if s=='mw' #factorial
+        
+        elsif s=='mw' #factorial
             val=Math.log(val)
             puts val;
             puts "Do you want to continue? 'yes or no'"
@@ -196,6 +196,9 @@ class Calc
                 go_next=false
             else puts "Enter +,-,/,*,**,--,++,!"
             end
+         else
+            puts "error"
+            puts "Enter +,-,/,*,**,--,++,!"
         end
     end
 
