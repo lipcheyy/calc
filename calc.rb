@@ -17,7 +17,7 @@ class Calc
             puts "Enter the second value"
             b=gets.chomp.to_i
             val+=b
-            puts val;
+            puts "Result: #{val}";
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -29,7 +29,7 @@ class Calc
             puts "Enter the second value"
             b=gets.chomp.to_i
             val-=b
-            puts val;
+            puts "Result: #{val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -45,7 +45,7 @@ class Calc
                 puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
             val/=b
-            puts val;
+            puts "Result: #{val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -57,7 +57,7 @@ class Calc
             puts "Enter the second value"
             b=gets.chomp.to_i
             val*=b;
-            puts val;
+            puts "Result: #{val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -66,9 +66,9 @@ class Calc
             end
         
         elsif s=='**' #Віднімання
-            puts "Enter the second value"
-            val*=val;
-            puts val;
+            
+            #val*=val;
+            puts "Result: #{val*=val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -80,7 +80,7 @@ class Calc
             puts "Enter the second value"
             b=gets.chomp.to_i
             val%=b;
-            puts val;
+            puts "Result: #{val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -89,8 +89,7 @@ class Calc
             end
         
         elsif s=='--' #Віднімання
-            puts "Enter the second value"
-            puts val-=1
+            puts "Result: #{val-=1}";
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -99,8 +98,7 @@ class Calc
             end
         
         elsif s=='++' #Віднімання
-            puts "Enter the second value"
-            puts val+=1
+            puts "Result: #{val+=1}";
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -110,7 +108,7 @@ class Calc
         
         elsif s=='!' #factorial
             val=factorial(val)
-            puts val;
+            puts "Result: #{val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -120,7 +118,7 @@ class Calc
          
         elsif s=='sqrt' #factorial
             val=Math.sqrt(val)
-            puts val;
+            puts "Result: #{val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -130,7 +128,7 @@ class Calc
          
         elsif s=='sin' #factorial
             val=Math.sin(val)
-            puts val;
+            puts "Result: #{val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -140,7 +138,7 @@ class Calc
          
         elsif s=='cos' #factorial
             val=Math.cos(val)
-            puts val;
+            puts "Result: #{val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -150,7 +148,7 @@ class Calc
          
         elsif s=='tan' #factorial
             val=Math.tan(val)
-            puts val;
+            puts "Result: #{val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -160,7 +158,7 @@ class Calc
          
         elsif s=='exp' #factorial
             val=Math.exp(val)
-            puts val;
+            puts "Result: #{val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -170,7 +168,7 @@ class Calc
          
         elsif s=='ctan' #factorial
             val=Math.cos(val)/Math.sin(val)
-            puts val;
+            puts "Result: #{val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -180,7 +178,7 @@ class Calc
           
         elsif s=='ln' #factorial
             val=Math.log(val)
-            puts val;
+            puts "Result: #{val}";;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
@@ -197,8 +195,8 @@ class Calc
             else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
         elsif s=='mr' #factorial
-            mw=val
-            puts mw;
+            val=mw
+            puts val;
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
