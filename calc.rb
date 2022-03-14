@@ -9,8 +9,9 @@ class Calc
     puts "Enter the first value"
     val=gets.chomp.to_i
     go_next=true
-    puts "Enter +,-,/,*,**,--,++,!,sqrt"
-    while go_next==true
+    puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
+    mw=0;
+    while go_next
         s=gets.chomp
         if s=='+' #Додавання
             puts "Enter the second value"
@@ -21,7 +22,7 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
         
         elsif s=='-' #Віднімання
@@ -33,15 +34,15 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
         
-        elsif s=='/' #Віднімання
+        elsif s=='/' #ділення
             puts "Enter the second value"
             b=gets.chomp.to_i
             if b==0
                 puts "Error"
-                puts "Enter +,-,/,*,**,--,++,!"
+                puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
             val/=b
             puts val;
@@ -49,10 +50,10 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
         
-        elsif s=='*' #Віднімання
+        elsif s=='*' #множення
             puts "Enter the second value"
             b=gets.chomp.to_i
             val*=b;
@@ -61,7 +62,7 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
         
         elsif s=='**' #Віднімання
@@ -72,10 +73,10 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
         
-        elsif s=='%' #Віднімання
+        elsif s=='mod' #Віднімання
             puts "Enter the second value"
             b=gets.chomp.to_i
             val%=b;
@@ -84,7 +85,7 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
         
         elsif s=='--' #Віднімання
@@ -94,7 +95,7 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
         
         elsif s=='++' #Віднімання
@@ -104,7 +105,7 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
         
         elsif s=='!' #factorial
@@ -114,7 +115,7 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
          
         elsif s=='sqrt' #factorial
@@ -124,7 +125,7 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
          
         elsif s=='sin' #factorial
@@ -134,7 +135,7 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
          
         elsif s=='cos' #factorial
@@ -144,7 +145,7 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
          
         elsif s=='tan' #factorial
@@ -154,7 +155,7 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
          
         elsif s=='exp' #factorial
@@ -164,7 +165,7 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
          
         elsif s=='ctan' #factorial
@@ -174,7 +175,7 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
           
         elsif s=='ln' #factorial
@@ -184,21 +185,29 @@ class Calc
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
         
         elsif s=='mw' #factorial
-            val=Math.log(val)
-            puts val;
+            mw=val
             puts "Do you want to continue? 'yes or no'"
             choice = gets.chomp
             if(choice=="no")
                 go_next=false
-            else puts "Enter +,-,/,*,**,--,++,!"
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
+            end
+        elsif s=='mr' #factorial
+            mw=val
+            puts mw;
+            puts "Do you want to continue? 'yes or no'"
+            choice = gets.chomp
+            if(choice=="no")
+                go_next=false
+            else puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
          else
             puts "error"
-            puts "Enter +,-,/,*,**,--,++,!"
+            puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
         end
     end
 
