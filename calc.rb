@@ -20,21 +20,18 @@ class Calc
     choice=""
     mw=0;
     stack=[];
-    primes=[]
     while $go_next
         puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod,push,pop,stack,primes"
         s=gets.chomp
         if s=='+' #Додавання
             puts "Enter the second value"
             b=gets.chomp.to_i
-            val+=b
-            puts "Result: #{val}";
+            puts "Result: #{val+=b}";
             thechoice(choice)
         elsif s=='-' #Віднімання
             puts "Enter the second value"
             b=gets.chomp.to_i
-            val-=b
-            puts "Result: #{val}";;
+            puts "Result: #{val-=b}";;
             thechoice(choice)
         elsif s=='/' #ділення
             puts "Enter the second value"
@@ -43,51 +40,51 @@ class Calc
                 puts "Error"
                 puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
-            puts "Result: #{val/=b}";;
+            puts "Result: #{val/=b}"
             thechoice(choice)
         elsif s=='*' #множення
             puts "Enter the second value"
             b=gets.chomp.to_i
-            puts "Result: #{val*=b}";;
+            puts "Result: #{val*=b}"
             thechoice(choice)
         elsif s=='**' #Віднімання
-            puts "Result: #{val*=val}";;
+            puts "Result: #{val*=val}"
             thechoice(choice)
         elsif s=='mod' #Віднімання
             puts "Enter the second value"
             b=gets.chomp.to_i
-            puts "Result: #{val%=b}";;
+            puts "Result: #{val%=b}"
             thechoice(choice)
         elsif s=='--' #Віднімання
-            puts "Result: #{val-=1}";
+            puts "Result: #{val-=1}"
             puts "Do you want to continue? 'yes or no'"
             thechoice(choice)
-        elsif s=='++' #Віднімання
-            puts "Result: #{val+=1}";
+        elsif s=='++' #Відніманн
+            puts "Result: #{val+=1}"
             thechoice(choice)
         elsif s=='!' #factorial
-            puts "Result: #{val=factorial(val}";;
+            puts "Result: #{val=factorial(val)}"
             thechoice(choice)
         elsif s=='sqrt' #factorial
-            puts "Result: #{val=Math.sqrt(val)}";;
+            puts "Result: #{val=Math.sqrt(val)}"
             thechoice(choice)
         elsif s=='sin' #factorial
-            puts "Result: #{val=Math.sin(val)}";;
+            puts "Result: #{val=Math.sin(val)}"
             thechoice(choice)
         elsif s=='cos' #factorial
-            puts "Result: #{val=Math.cos(val)}";;
+            puts "Result: #{val=Math.cos(val)}"
             thechoice(choice)
         elsif s=='tan' #factorial
-            puts "Result: #{val=Math.tan(val)}";;
+            puts "Result: #{val=Math.tan(val)}"
             thechoice(choice)
         elsif s=='exp' #factorial
-            puts "Result: #{val=Math.exp(val)}";;
+            puts "Result: #{val=Math.exp(val)}"
             thechoice(choice)
         elsif s=='ctan' #factorial
-            puts "Result: #{val=Math.cos(val)/Math.sin(val)}";;
+            puts "Result: #{val=Math.cos(val)/Math.sin(val)}"
             thechoice(choice)
         elsif s=='ln' #factorial
-            puts "Result: #{val=Math.log(val)}";;
+            puts "Result: #{val=Math.log(val)}"
             thechoice(choice)
         elsif s=='mw' #factorial
             mw=val
@@ -95,10 +92,6 @@ class Calc
         elsif s=='mr' #factorial
             val=mw
             puts val;
-            thechoice(choice)
-        elsif s=="pus"
-            stack<<val;
-            puts stack.last(1)
             thechoice(choice)
         elsif s=="push"
             puts "Enter the value you want to push in stack"
@@ -118,15 +111,8 @@ class Calc
         elsif s== "primes"
             puts "Enter the second value"
             b=gets.chomp.to_i
-            Prime.each (b-1) { |i| primes<<i if i>val }
-            puts primes.last(1)
-            thechoice(choice)
-        elsif s=="popr"
-            puts primes.last(1)
-            primes.pop
-            if primes.length==0
-                puts "Error, stack is empty"
-            end
+            Prime.each(b-1) { |i| stack<<i if i>val }
+            puts stack.last(1)
             thechoice(choice)
         else
             puts "error"
