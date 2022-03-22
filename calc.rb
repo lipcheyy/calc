@@ -1,3 +1,4 @@
+require "prime"
 def factorial(n)
     if(n > 1)
         return n * factorial(n - 1);
@@ -7,6 +8,7 @@ def factorial(n)
 end
 $go_next=true
 def thechoice(s)
+    puts "Do you want to continue? 'yes or no'"
     s=gets.chomp
     if s=="no"
         $go_next=false
@@ -27,17 +29,13 @@ class Calc
             b=gets.chomp.to_i
             val+=b
             puts "Result: #{val}";
-            puts "Do you want to continue? 'yes or no'"
             thechoice(choice)
-        
         elsif s=='-' #Віднімання
             puts "Enter the second value"
             b=gets.chomp.to_i
             val-=b
             puts "Result: #{val}";;
-            puts "Do you want to continue? 'yes or no'"
             thechoice(choice)
-        
         elsif s=='/' #ділення
             puts "Enter the second value"
             b=gets.chomp.to_i
@@ -45,111 +43,67 @@ class Calc
                 puts "Error"
                 puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod"
             end
-            val/=b
-            puts "Result: #{val}";;
-            puts "Do you want to continue? 'yes or no'"
+            puts "Result: #{val/=b}";;
             thechoice(choice)
-        
         elsif s=='*' #множення
             puts "Enter the second value"
             b=gets.chomp.to_i
-            val*=b;
-            puts "Result: #{val}";;
-            puts "Do you want to continue? 'yes or no'"
+            puts "Result: #{val*=b}";;
             thechoice(choice)
-        
         elsif s=='**' #Віднімання
-            
-            #val*=val;
             puts "Result: #{val*=val}";;
-            puts "Do you want to continue? 'yes or no'"
             thechoice(choice)
-        
         elsif s=='mod' #Віднімання
             puts "Enter the second value"
             b=gets.chomp.to_i
-            val%=b;
-            puts "Result: #{val}";;
-            puts "Do you want to continue? 'yes or no'"
+            puts "Result: #{val%=b}";;
             thechoice(choice)
-        
         elsif s=='--' #Віднімання
             puts "Result: #{val-=1}";
             puts "Do you want to continue? 'yes or no'"
             thechoice(choice)
-        
         elsif s=='++' #Віднімання
             puts "Result: #{val+=1}";
-            puts "Do you want to continue? 'yes or no'"
             thechoice(choice)
-        
         elsif s=='!' #factorial
-            val=factorial(val)
-            puts "Result: #{val}";;
-            puts "Do you want to continue? 'yes or no'"
+            puts "Result: #{val=factorial(val}";;
             thechoice(choice)
-         
         elsif s=='sqrt' #factorial
-            val=Math.sqrt(val)
-            puts "Result: #{val}";;
-            puts "Do you want to continue? 'yes or no'"
+            puts "Result: #{val=Math.sqrt(val)}";;
             thechoice(choice)
-         
         elsif s=='sin' #factorial
-            val=Math.sin(val)
-            puts "Result: #{val}";;
-            puts "Do you want to continue? 'yes or no'"
+            puts "Result: #{val=Math.sin(val)}";;
             thechoice(choice)
-         
         elsif s=='cos' #factorial
-            val=Math.cos(val)
-            puts "Result: #{val}";;
-            puts "Do you want to continue? 'yes or no'"
+            puts "Result: #{val=Math.cos(val)}";;
             thechoice(choice)
-         
         elsif s=='tan' #factorial
-            val=Math.tan(val)
-            puts "Result: #{val}";;
-            puts "Do you want to continue? 'yes or no'"
+            puts "Result: #{val=Math.tan(val)}";;
             thechoice(choice)
-         
         elsif s=='exp' #factorial
-            val=Math.exp(val)
-            puts "Result: #{val}";;
-            puts "Do you want to continue? 'yes or no'"
+            puts "Result: #{val=Math.exp(val)}";;
             thechoice(choice)
-         
         elsif s=='ctan' #factorial
-            val=Math.cos(val)/Math.sin(val)
-            puts "Result: #{val}";;
-            puts "Do you want to continue? 'yes or no'"
+            puts "Result: #{val=Math.cos(val)/Math.sin(val)}";;
             thechoice(choice)
-          
         elsif s=='ln' #factorial
-            val=Math.log(val)
-            puts "Result: #{val}";;
-            puts "Do you want to continue? 'yes or no'"
+            puts "Result: #{val=Math.log(val)}";;
             thechoice(choice)
-        
         elsif s=='mw' #factorial
             mw=val
-            puts "Do you want to continue? 'yes or no'"
             thechoice(choice)
         elsif s=='mr' #factorial
             val=mw
             puts val;
-            puts "Do you want to continue? 'yes or no'"
             thechoice(choice)
         elsif s=="pus"
             stack<<val;
             puts stack.last(1)
-            puts "Do you want to continue? 'yes or no"
             thechoice(choice)
         elsif s=="push"
             puts "Enter the value you want to push in stack"
             val=gets.chomp.to_i
             stack<<val
-            puts "Do you want to continue? 'yes or no"
             thechoice(choice)
         elsif s=="pop"
             puts stack.last(1)
@@ -157,30 +111,25 @@ class Calc
             if stack.length==0
                 puts "Error, stack is empty"
             end
-            puts "Do you want to continue? 'yes or no"
             thechoice(choice)
         elsif s=="stack"
-            stack.each { |stackElements| puts stackElements}
-            puts "Do you want to continue? 'yes or no'"
+            print stack
             thechoice(choice)
-        elsif s== "primes"
+        elsif s== "p"
             puts "Enter the second value"
             b=gets.chomp.to_i
-            if val%2==0
-                val+=1;
+            Prime.each (b-1) { |i| primes<<i if i>val }
+            puts primes.last(1)
+            thechoice(choice)
+        elsif s=="popr"
+            puts primes.last(1)
+            primes.pop
+            if primes.length==0
+                puts "Error, stack is empty"
             end
-            puts "Stack with prime digits:"
-            while val<b
-                val+=2
-                primes<<val
-            end
-            puts primes
-            puts "Do you want to continue? 'yes or no'"
             thechoice(choice)
         else
             puts "error"
-            puts "Enter +,-,/,*,**,--,++,!,sqrt,sin,ctan,tan,cos,exp,ln,mod,push,pop,stack,primes"
         end
     end
-
 end
