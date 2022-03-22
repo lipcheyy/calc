@@ -115,7 +115,7 @@ class Calc
         elsif s=="stack"
             print stack
             thechoice(choice)
-        elsif s== "p"
+        elsif s== "primes"
             puts "Enter the second value"
             b=gets.chomp.to_i
             Prime.each (b-1) { |i| primes<<i if i>val }
